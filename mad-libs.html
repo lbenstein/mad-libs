@@ -20,7 +20,21 @@
 
  </body>
 <script>
+//Add an event listener to the button so that it calls a makeMadLib function when clicked.
+var LibItButton = document.getElementById('lib-button');
+LibItButton.addEventListener("click", makeMadLib);
+//In the makeMadLib function, retrieve the current values of the form input elements,
+//make a story from them, and output that in the story div (like "Pamela really likes pink cucumbers.")
+var myNoun = document.querySelector('#noun');
+var myAdj = document.querySelector('#adjective');
+var myPerson = document.querySelector('#person');
+var myStory = document.querySelector('#story');
 
+function makeMadLib () {
+  var newPara = document.createElement('p');
+  newPara.innerHTML = myPerson.value + " really likes " + myAdj.value + " " + myNoun.value;
+  myStory.appendChild(newPara);
+}
 </script>
 
 </html>
